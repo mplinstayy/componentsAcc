@@ -1,0 +1,85 @@
+﻿@model InventoryAcc.Models.ComponentViewModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Комплектующее</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room" class="control-label"></label>
+                <select asp-for="Room" class="form-select">
+                    <option>101</option>
+                    <option>102</option>
+                    <option>103</option>
+                </select>                
+                <span asp-validation-for="Room" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <select asp-for="Department" class="form-select" >
+                    <option>Отдел 1</option>
+                    <option>Отдел 2</option>
+                    <option>Отдел 3</option>
+                    <option>Отдел 4</option>
+                </select>
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chief" class="control-label"></label>
+                <select asp-for="Chief" class="form-select" >
+                    <option>Тимофеева Вера Михайловна</option>
+                    <option>Смирнова Наталья Александровна</option>
+                </select>
+                <span asp-validation-for="Chief" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Responsible" class="control-label"></label>
+                <select asp-for="Responsible" class="form-select" >
+                    <option>Симонов Савелий Давидович</option>
+                    <option>Максимов Василий Романович</option>
+                    <option>Ильин Сергей Константинович</option>
+                    <option>Усов Михаил Арсентьевич</option>
+                    <option>Мельникова Василиса Андреевна</option>
+                </select>
+                <span asp-validation-for="Responsible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestNumber" class="control-label"></label>
+                <input asp-for="RequestNumber" class="form-control" />
+                <span asp-validation-for="RequestNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-select" >
+                    <option>В работе</option>
+                    <option>На складе</option>
+                    <option>Списано</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" style="margin-top:10px;"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
